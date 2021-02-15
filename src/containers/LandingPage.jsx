@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Display from '../components/display/Display';
+// import Display from '../components/display/Display';
 import Search from '../components/search/Search';
 import fetchApi from '../services/fetchApi';
 
@@ -33,7 +33,7 @@ export default class LandingPage extends Component {
   }
 
   render(){
-    const { display } = this.state;
+    // const { display } = this.state;
     return (
       <>
         <Search
@@ -42,9 +42,9 @@ export default class LandingPage extends Component {
           handleCrudMethod={this.handleCrudMethod}
           handleUrlChange={this.handleUrlChange}
         />
-        <Display
+        {/* <Display
           display={display}
-        />
+        /> */}
       </>
     );
   }
