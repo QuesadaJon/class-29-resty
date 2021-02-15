@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import Display from '../components/display/Display';
 import Search from '../components/search/Search';
+import fetchApi from '../services/fetchApi';
 
 export default class LandingPage extends Component {
   state = {
@@ -28,11 +30,6 @@ export default class LandingPage extends Component {
 
     fetchApi(urlSearch, crudMethod, requestBody)
       .then(display => this.setState({ display }));
-
-    const newRequest = {
-      urlInput: this.state.urlSearch,
-      crudMethod: this.state.crudMethod
-    };
   }
 
   render(){
@@ -44,6 +41,9 @@ export default class LandingPage extends Component {
           handleRequestBody={this.handleRequestBody}
           handleCrudMethod={this.handleCrudMethod}
           handleUrlChange={this.handleUrlChange}
+        />
+        <Display
+          display={display}
         />
       </>
     );
